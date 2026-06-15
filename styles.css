@@ -1,0 +1,16 @@
+.germania-one-regular {
+  font-family: "Germania One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    background-image: url();
+}
+.hero {
+    min-height: 100dvh;
+}
+.hero .hero__title {
+    font-size: clamp(5rem, 8vw, 10rem);
+    transform: rotate(-15deg);
+}
