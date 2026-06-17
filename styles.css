@@ -1,9 +1,26 @@
+:root{
+    --light-color:whitesmoke ;
+    --dark-color:#101010;
+}
 .germania-one-regular {
     font-family: "Germania One", system-ui;
     font-weight: 400;
     font-style: normal;
+    color: var(--light-color);
+    background-color: var(--dark-color);
 }
-
+.intro-section{
+    text-align: center;
+}
+.event--title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: clamp(4rem, 6%, 8rem);
+}
+.event--title~p {
+    text-align: center;
+    font-size: clamp(0.8rem, 4dvw, 1.3rem);
+}
 html {
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -26,17 +43,18 @@ body {
 }
 
 .hero {
-    background-color: rgba(80, 24, 1, 0.54);
+    background-color:var(--dark-color) ;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 16%;
 }
 
 .hero .site-title {
-    color: white;
-    font-size: clamp(6rem, 20vw, 18rem);
+    
+    font-size: clamp(6rem, 18vw, 18rem);
     transform: rotate(-8deg);
     line-height: 0.6;
     letter-spacing: -4px;
@@ -44,11 +62,14 @@ body {
     text-align: center;
     text-shadow: 0px 0px 15px rgba(247, 144, 59, 1);
 }
+.site-description{
+    padding-top: 8dvh;
+}
 
 nav.nav {
     margin: 0;
     min-width: 100% !important;
-    background-color: black;
+    background-color: var(--dark-color);
 }
 
 .menu-primary {
@@ -66,15 +87,15 @@ nav.nav {
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     font-weight: bold;
-    color: white;
+    color: var(--light-color);
     transition: all 100ms linear;
     padding: 1rem;
     border-radius: 2px;
 }
 
 :is(.menu-link:hover:not(.ow-button-hover), .menu-link:active:not(.ow-button-hover)) {
-    background-color: white;
-    color: black;
+    background-color: var(--light-color);
+    color: var(--dark-color);
     box-shadow: 2px 5px 15px 2px rgba(191, 14, 14, 0.75);
 }
 
@@ -92,13 +113,13 @@ nav.nav {
     padding: 1.2rem;
     border-radius: 2px;
     background-color: orangered;
-    color: white;
+    color: var(--light-color);
     font-weight: 900;
     text-decoration: none;
 }
 
 .buy-button:hover {
-    background-color: white;
+    background-color:var(--light-color);
     color: orangered;
     -webkit-animation: wobble-hor-bottom 0.8s 1s forwards;
     animation: wobble-hor-bottom 0.8s 1s forwards;
@@ -174,7 +195,7 @@ nav.nav {
         -webkit-transform: translateX(-6px) rotate(-1.2deg);
         transform: translateX(-6px) rotate(-1.2deg);
     }
-
+}
 h3{
     font-style: italic;
     font-weight: bolder;
@@ -231,7 +252,7 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color:var(--light-color);
   font-size: 24px;
   padding-left: 4px;
   transition: background-color 0.3s ease;
@@ -247,8 +268,6 @@ h3{
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
-  background-color: #f5f5f5;
-  border: 2px solid #ddd;
   border-radius: 8px;
   margin-top: 0;
 }
@@ -269,7 +288,7 @@ h3{
   line-height: 1.6;
   text-align: center;
   white-space: pre-wrap;
-  color: #333;
+  color: var(--light-color);
 }
 
 /* Responsive: en móviles una sola columna */
