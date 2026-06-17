@@ -109,3 +109,10 @@ h3{
     margin-top: 15px;
   }
 }
+.info{
+  text-align: center;
+  font-style: italic;
+}
+.site-footer{
+  text-align: center;
+}
