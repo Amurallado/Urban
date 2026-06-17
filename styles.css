@@ -1,3 +1,179 @@
+.germania-one-regular {
+    font-family: "Germania One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url();
+}
+
+.site-header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.hero {
+    background-color: rgba(80, 24, 1, 0.54);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .site-title {
+    color: white;
+    font-size: clamp(6rem, 20vw, 18rem);
+    transform: rotate(-8deg);
+    line-height: 0.6;
+    letter-spacing: -4px;
+    height: max-content;
+    text-align: center;
+    text-shadow: 0px 0px 15px rgba(247, 144, 59, 1);
+}
+
+nav.nav {
+    margin: 0;
+    min-width: 100% !important;
+    background-color: black;
+}
+
+.menu-primary {
+    padding: 0 2dvw;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+.menu-link {
+    font-size: clamp(1rem, 2dvw, 3rem);
+    text-decoration: none;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    transition: all 100ms linear;
+    padding: 1rem;
+    border-radius: 2px;
+}
+
+:is(.menu-link:hover:not(.ow-button-hover), .menu-link:active:not(.ow-button-hover)) {
+    background-color: white;
+    color: black;
+    box-shadow: 2px 5px 15px 2px rgba(191, 14, 14, 0.75);
+}
+
+.menu-item .sow-social-media-button img {
+    max-height: 4rem;
+    filter: grayscale(1);
+    transition: all 300ms linear;
+}
+
+.menu-item .sow-social-media-button:hover img {
+    filter: grayscale(0);
+}
+
+.buy-button {
+    padding: 1.2rem;
+    border-radius: 2px;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.buy-button:hover {
+    background-color: white;
+    color: orangered;
+    -webkit-animation: wobble-hor-bottom 0.8s 1s forwards;
+    animation: wobble-hor-bottom 0.8s 1s forwards;
+}
+
+@-webkit-keyframes wobble-hor-bottom {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        -webkit-transform: translateX(-30px) rotate(-6deg);
+        transform: translateX(-30px) rotate(-6deg);
+    }
+
+    30% {
+        -webkit-transform: translateX(15px) rotate(6deg);
+        transform: translateX(15px) rotate(6deg);
+    }
+
+    45% {
+        -webkit-transform: translateX(-15px) rotate(-3.6deg);
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+
+    60% {
+        -webkit-transform: translateX(9px) rotate(2.4deg);
+        transform: translateX(9px) rotate(2.4deg);
+    }
+
+    75% {
+        -webkit-transform: translateX(-6px) rotate(-1.2deg);
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
+}
+
+@keyframes wobble-hor-bottom {
+
+    0%,
+    100% {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+        -webkit-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+    }
+
+    15% {
+        -webkit-transform: translateX(-30px) rotate(-6deg);
+        transform: translateX(-30px) rotate(-6deg);
+    }
+
+    30% {
+        -webkit-transform: translateX(15px) rotate(6deg);
+        transform: translateX(15px) rotate(6deg);
+    }
+
+    45% {
+        -webkit-transform: translateX(-15px) rotate(-3.6deg);
+        transform: translateX(-15px) rotate(-3.6deg);
+    }
+
+    60% {
+        -webkit-transform: translateX(9px) rotate(2.4deg);
+        transform: translateX(9px) rotate(2.4deg);
+    }
+
+    75% {
+        -webkit-transform: translateX(-6px) rotate(-1.2deg);
+        transform: translateX(-6px) rotate(-1.2deg);
+    }
 
 h3{
     font-style: italic;
