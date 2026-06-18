@@ -169,3 +169,36 @@ if (concertImageEl) {
 }
 
 renderCalendar();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerBtn = document.querySelector('.burger-menu');
+  const navMenu = document.getElementById('menu-principal');
+
+  // 1. Abrir/Cerrar menú al hacer clic en el botón
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('collapsed-menu');
+    burgerBtn.classList.toggle('collapsed-menu');
+    
+    // Actualizar atributo de accesibilidad
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // 2. Cerrar menú al hacer clic en un enlace
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // 3. Cerrar menú al hacer clic fuera del menú o del botón
+  document.addEventListener('click', (e) => {
+    if (!navMenu.contains(e.target) && !burgerBtn.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Función auxiliar para cerrar
+  function closeMenu() {
+    navMenu.classList.remove('collapsed-menu');
+    burgerBtn.classList.remove('collapsed-menu');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+  }
+});

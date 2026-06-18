@@ -1,4 +1,4 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -23,30 +23,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
-
-<body class="site-container home germania-one-regular">
+<body class=" site-container home germania-one-regular">
   <header class="site-header">
+    <div class="burger-menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+</div>
     <nav class="nav wrap">
-      <ul id="menu-principal" class="menu-primary">
-        <li id="menu-item-361" class="menu-item">
-          <a class="menu-link" href="https://www.urbanrockconcept.com/eventos/">Eventos</a>
-          <a class="menu-link" href="https://www.urbanrockconcept.com/contacto/">Contacto</a>
-          <a class="menu-link" href="https://www.urbanrockconcept.com/tienda/">Conciertos</a>
-        </li>
-        <li class="menu-item menu-item-center">
-          <a href="https://www.urbanrockconcept.com" aria-current="page">
-            <img decoding="async" class="home-logo size-thumbnail"
-              src="https://www.urbanrockconcept.com/wp-content/uploads/2017/08/LOGO_UrbanRockConcept_NEGATIVO-01-150x150.png"
-              alt="" width="150" height="150" srcset="
-                  https://www.urbanrockconcept.com/wp-content/uploads/2017/08/LOGO_UrbanRockConcept_NEGATIVO-01-150x150.png 150w,
-                  https://www.urbanrockconcept.com/wp-content/uploads/2017/08/LOGO_UrbanRockConcept_NEGATIVO-01-450x450.png 450w,
-                  https://www.urbanrockconcept.com/wp-content/uploads/2017/08/LOGO_UrbanRockConcept_NEGATIVO-01-100x100.png 100w
-                " sizes="(max-width: 150px) 100vw, 150px" /></a>
-        </li>
-        <li class="social-media-button-container menu-item">
+      <ul id="menu-principal" class="menu-primary collapsed-menu">
+        <li class="social-media-button-container menu-item hidden">
           <a class="menu-link ow-button-hover sow-social-media-button-facebook-0 sow-social-media-button"
             title="Urban Rock Concept en Facebook" aria-label="Urban Rock Concept en Facebook" target="_blank"
             rel="noopener noreferrer" href="https://www.facebook.com/urbanrockconcept"><img
@@ -62,29 +49,40 @@
               src="https://cdn-icons-png.flaticon.com/128/15713/15713420.png" alt="">
           </a>
         </li>
+        <li class="menu-item menu-item-center">
+          <a href="https://www.urbanrockconcept.com" aria-current="page">
+            <img decoding="async" class="home-logo size-thumbnail"
+              src="https://www.urbanrockconcept.com/wp-content/uploads/2017/08/LOGO_UrbanRockConcept_NEGATIVO-01-150x150.png"
+              alt="" srcset=""></a>
+        </li>
+        <li id="menu-item-361" class="menu-item hidden">
+          <a class="menu-link germania-one-regular" href="https://www.urbanrockconcept.com/eventos/">Eventos</a>
+          <a class="menu-link germania-one-regular" href="https://www.urbanrockconcept.com/contacto/">Contacto</a>
+          <a class="menu-link germania-one-regular" href="https://www.urbanrockconcept.com/tienda/">Conciertos</a>
+        </li>
       </ul>
     </nav>
   </header>
+
   <main>
+
     <section class="hero">
       <h1 class="site-title pirata-one-regular">Urban Rock Concept</h1>
       <p class="site-description">Tu sala de conciertos en Vitoria</p>
-      <a class="buy-button" href="#">Comprar entradas</a>
+      <a class="buy-button" href="#entradas">Comprar entradas</a>
     </section>
-
+    <h2 class="h2">Nuestro calendario</h2>
     <section class="calendario">
       <div class="calendar-layout">
-
         <!-- COLUMNA IZQUIERDA: Calendario -->
         <div class="calendar-wrapper">
           <div class="calendar-header">
-            <h2 id="monthYear"></h2>
+            <p id="monthYear"></p>
             <div class="nav-buttons">
               <button class="today-btn" id="todayBtn">Hoy</button>
               <button class="nav-btn" id="prevBtn">‹</button>
               <button class="nav-btn" id="nextBtn">›</button>
             </div>
-
           </div>
           <div class="concert-side">
             <div class="concert-info" id="concertInfo">
@@ -99,79 +97,64 @@
             <div class="weekday">Vie</div>
             <div class="weekday">Sáb</div>
             <div class="weekday">Dom</div>
-
           </div>
-
           <div class="days" id="daysGrid"></div>
-
         </div>
         <div class="concert-image" id="concertImage">
           🎸 Selecciona un concierto
         </div>
-        <section class="info">
+        <div class="info">
           <h3>INFORMACIÓN PARA CONCIERTOS QUE CAMBIAN DE HORARIO / FECHA...</h3>
-          <p>*** Las entradas adquiridas anteriormente son válidas para las nuevas fechas programadas ***</p>
-          <p>*** Si tienes alguna duda, contacta con attcliente@woutick.es o con nosotros en info@urbanrockconcept.com
-            ***
-          </p>
-        </section>
-      </div>
-
+          <p>* Las entradas adquiridas anteriormente son válidas para las nuevas fechas programadas *</p>
+          <p>* Si tienes alguna duda, contacta con attcliente@woutick.es o con nosotros en
+            info@urbanrockconcept.com *</p>
+        </div>
     </section>
+
     <!-- Concierto 1: Crypta + Bloodhunter -->
     <section class="event-section">
       <h2 class="event--title">proximos eventos!!</h2>
-      <p>El lunes 15 de Junio, tienes una cita con el Death Metal de <strong>CRYPTA</strong> y
+      <h3>El lunes 15 de Junio, tienes una cita con el Death Metal de <strong>CRYPTA</strong> y
         <strong>BLOODHUNTER</strong>.
-      </p>
-      <p>¡¡¡¡Pásate a visitarnos!!!!</p>
-      <p>Nuestra cafetería está a tu disposición, de lunes a viernes de 9:00h a 13:30h.</p>
-
-      <!-- Contenedor grid para los videos -->
-      <div class="video-grid">
-        <!-- Video 1: Crypta -->
-        <div class="video-item">
-          <a href="https://www.youtube.com/watch?v=t5pobBaJlv8" target="_blank" rel="noopener noreferrer"
-            class="youtube-thumbnail">
-            <img src="https://img.youtube.com/vi/t5pobBaJlv8/maxresdefault.jpg" alt="Ver video de Crypta en YouTube">
-            <div class="play-icon">▶</div>
-          </a>
-          <!-- Horarios de Crypta que aparecen debajo al hacer hover -->
-          <div class="horarios-below">
-            <pre><strong>HORARIOS CRYPTA:</strong>
-19:30 Apertura Puertas
-21:05 - 22:20 Crypta</pre>
+        <p>¡¡¡ Te esperamos !!!</p>
+        <!-- Contenedor grid para los videos -->
+        <div class="video-grid">
+          <!-- Video 1: Crypta -->
+          <div class="video-item">
+            <a href="https://www.youtube.com/watch?v=t5pobBaJlv8" target="_blank" rel="noopener noreferrer"
+              class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/t5pobBaJlv8/maxresdefault.jpg" alt="Ver video de Crypta en YouTube">
+              <div class="play-icon">▶</div>
+            </a>
+            <!-- Horarios de Crypta que aparecen debajo al hacer hover -->
+            <div class="horarios-below">
+              <pre><strong>HORARIOS CRYPTA:</strong>19:30 Apertura Puertas 21:05 - 22:20 Crypta</pre>
+            </div>
+          </div>
+          <!-- Video 2: BloodHunter -->
+          <div class="video-item">
+            <a href="https://www.youtube.com/watch?v=oCLPIAUJlSA" target="_blank" rel="noopener noreferrer"
+              class="youtube-thumbnail">
+              <img src="https://img.youtube.com/vi/oCLPIAUJlSA/maxresdefault.jpg"
+                alt="Ver video de BloodHunter en YouTube">
+              <div class="play-icon">▶</div>
+            </a>
+            <!-- Horarios de BloodHunter que aparecen debajo al hacer hover -->
+            <div class="horarios-below">
+              <pre><strong>HORARIOS BLOODHUNTER: </strong>19:30 Apertura Puertas 20:00 - 20:45 BloodHunter</pre>
+            </div>
           </div>
         </div>
-
-        <!-- Video 2: BloodHunter -->
-        <div class="video-item">
-          <a href="https://www.youtube.com/watch?v=oCLPIAUJlSA" target="_blank" rel="noopener noreferrer"
-            class="youtube-thumbnail">
-            <img src="https://img.youtube.com/vi/oCLPIAUJlSA/maxresdefault.jpg"
-              alt="Ver video de BloodHunter en YouTube">
-            <div class="play-icon">▶</div>
-          </a>
-          <!-- Horarios de BloodHunter que aparecen debajo al hacer hover -->
-          <div class="horarios-below">
-            <pre><strong>HORARIOS BLOODHUNTER:</strong>
-19:30 Apertura Puertas
-20:00 - 20:45 BloodHunter
-</pre>
-          </div>
-        </div>
-      </div>
-
     </section>
 
     <!-- Concierto 3: Nick Dittmeier & The Sawdusters -->
-    <section class="event-section">
+    <section class="event-section" id="entradas">
       <h2>El domingo 21 de Junio, pásate por URBAN a disfrutar con nosotros el Country Rock.</h2>
-        <iframe title="YouTube video player" src="https://www.youtube.com/embed/4FgiYUkxOPQ?si=PiqSzfjeclSzIun-"
-          width="760" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
+      <iframe title="YouTube video player" src="https://www.youtube.com/embed/4FgiYUkxOPQ?si=PiqSzfjeclSzIun-"
+        width="760" height="315" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
     </section>
   </main>
+
   <footer class="site-footer">
     <div class="footer-search">
       <form class="search-form" method="get" action="https://www.urbanrockconcept.com/" role="search">
@@ -188,16 +171,21 @@
       </a>
     </div>
     <ul class="menu footer-legal">Cuestiones legales
-      <li><a class="menu-link menu-link__footer" href="https://www.urbanrockconcept.com/aviso-legal/">Aviso legal</a></li>
-      <li><a class="menu-link menu-link__footer" href="https://www.urbanrockconcept.com/mas-informacion-sobre-las-cookies/">Más información sobre las
+      <li><a class="menu-link menu-link__footer" href="https://www.urbanrockconcept.com/aviso-legal/">Aviso legal</a>
+      </li>
+      <li><a class="menu-link menu-link__footer"
+          href="https://www.urbanrockconcept.com/mas-informacion-sobre-las-cookies/">Más información sobre las
           cookies</a></li>
-      <li><a class="menu-link menu-link__footer" href="https://www.urbanrockconcept.com/politica-de-cookies/">Política de cookies</a></li>
+      <li><a class="menu-link menu-link__footer" href="https://www.urbanrockconcept.com/politica-de-cookies/">Política
+          de cookies</a></li>
     </ul>
     <div class="footer-copyright">
       <p>Copyright &copy; 2026 Urban Rock Concept. Todos los derechos reservados.</p>
     </div>
   </footer>
+
   <script src="script.js"></script>
+
 </body>
 
 </html>

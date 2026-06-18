@@ -22,18 +22,24 @@ section {
   padding: 4vh;
 }
 
-.intro-section {
-  text-align: center;
+h2 {
+  font-size: 250%;
+}
+
+h3 {
+  font-size: 200%;
+}
+
+h4 {
+  font-size: 100%;
 }
 
 .event--title {
   text-transform: uppercase;
-  text-align: center;
   font-size: clamp(4rem, 6%, 8rem);
 }
 
 .event--title~p {
-  text-align: center;
   font-size: clamp(0.8rem, 4dvw, 1.3rem);
 }
 
@@ -59,18 +65,87 @@ body {
   z-index: 10;
 }
 
+.menu-item-center :where(.home-logo) {
+  height: 5rem;
+}
+
+.burger-menu {
+  left: 10%;
+  top: 1.5rem;
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+}
+
 .hero {
   background-color: var(--dark-color);
+  background: url(tehzeebhud-guitarist-10330542_1920.jpg) center top no-repeat;
+  background-size: cover;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 16%;
+  position: relative;
+}
+
+.hero .site-title::before {
+  z-index: -1;
+  content: url(rockandroll.png);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -75%;
+  left: -10%;
+  filter: drop-shadow(1);
+  -webkit-animation: slide-in-fwd-bottom 0.6s ease-out 1s both;
+  animation: slide-in-fwd-bottom 0.5s ease-in-out 1s both;
+}
+
+@-webkit-keyframes slide-in-fwd-bottom {
+  0% {
+    -webkit-transform: translateZ(-1400px) translateY(800px) scale(0.5);
+    transform: translateZ(-1400px) translateY(800px) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) scale(1);
+    transform: translateZ(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-fwd-bottom {
+  0% {
+    -webkit-transform: translateZ(-1400px) translateY(800px) scale(0.5);
+    transform: translateZ(-1400px) translateY(800px) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0) translateY(0) scale(1);
+    transform: translateZ(0) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.hero::before {
+  z-index: 0;
+  content: "";
+  position: absolute;
+  top: -16%;
+  width: 100%;
+  height: 116%;
+  background-color: #101010ec;
 }
 
 .hero .site-title {
-
   font-size: clamp(6rem, 18vw, 18rem);
   transform: rotate(-8deg);
   line-height: 0.6;
@@ -81,12 +156,14 @@ body {
 }
 
 .site-description {
+  z-index: 2;
+  font-size: 2rem;
   padding-top: 8dvh;
 }
 
 nav.nav {
   margin: 0;
-  min-width: 100% !important;
+  min-width: 100%;
   background-color: var(--dark-color);
 }
 
@@ -99,26 +176,29 @@ nav.nav {
   list-style-type: none;
 }
 
+.menu-item {
+  display: flex;
+}
+
 .menu-link {
-  font-size: clamp(1rem, 2dvw, 3rem);
+  font-size: 1.5rem;
   text-decoration: none;
-  letter-spacing: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--light-color);
   transition: all 100ms linear;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 2px;
 }
 
-:is(.menu-link:hover:not(.ow-button-hover), .menu-link:active:not(.ow-button-hover)) {
+.menu-link:is(:hover, :active):not(.ow-button-hover) {
   background-color: var(--light-color);
   color: var(--dark-color);
   box-shadow: 2px 5px 15px 2px rgba(191, 14, 14, 0.75);
 }
 
 .menu-item .sow-social-media-button img {
-  max-height: 4rem;
+  max-height: 3rem;
   filter: grayscale(1);
   transition: all 300ms linear;
 }
@@ -128,12 +208,14 @@ nav.nav {
 }
 
 .buy-button {
+  z-index: 5;
   padding: 1.2rem;
   border-radius: 2px;
   background-color: orangered;
   color: var(--light-color);
   font-weight: 900;
   text-decoration: none;
+  transition: all 500ms linear;
 }
 
 .buy-button:hover {
@@ -287,6 +369,8 @@ h3 {
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
   border-radius: 8px;
   margin-top: 0;
 }
@@ -307,11 +391,23 @@ h3 {
   line-height: 1.6;
   text-align: center;
   white-space: pre-wrap;
-  color: var(--light-color);
+  color: #333;
 }
 
 /* Responsive: en móviles una sola columna */
 @media (max-width: 768px) {
+  .site-footer {
+    grid-template-columns: 1fr;
+    /* Una sola columna en móvil */
+    text-align: center;
+  }
+
+  .publicidad {
+    max-width: 150px;
+    /* Aún más pequeña en móvil */
+    margin: 20px auto;
+  }
+
   .video-grid {
     grid-template-columns: 1fr;
   }
@@ -322,23 +418,44 @@ h3 {
     opacity: 1;
     margin-top: 15px;
   }
+
+  .menu-primary {
+    justify-content: space-around;
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .menu-primary :nth-child(1) {
+    order: 2;
+  }
+
+  .menu-primary :nth-child(3) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-primary:not(.collapsed-menu) {
+    height: 100dvh;
+  }
+
+  .menu-primary.collapsed-menu .hidden {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+  .menu-link {
+    font-size: 3rem;
+  }
+  .hero .site-title::before {
+    top: -250%;
+  }
 }
 
 .info {
-  text-align: center;
   font-style: italic;
 }
-
-/* CALENDARIO */
-.calendario {
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-}
-
-
 
 /* ============================================
    CALENDARIO
@@ -678,21 +795,6 @@ h3 {
   /* Asegura que la imagen se vea completa sin deformarse */
 }
 
-/* Opcional: Si quieres que en móviles la publicidad baje o se ajuste */
-@media (max-width: 768px) {
-  .site-footer {
-    grid-template-columns: 1fr;
-    /* Una sola columna en móvil */
-    text-align: center;
-  }
-
-  .publicidad {
-    max-width: 150px;
-    /* Aún más pequeña en móvil */
-    margin: 20px auto;
-  }
-}
-
 .site-footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -701,27 +803,39 @@ h3 {
   padding: 16px;
   align-items: center;
 }
-.footer-legal{
+
+.footer-legal {
   list-style-type: none;
 }
+
 .footer-legal li {
   padding: 0.5rem;
 }
-.menu-link__footer{
+
+.menu-link__footer {
   padding: 0.2rem;
   font-size: 1rem;
   letter-spacing: 0;
 }
+
 .footer-copyright {
   text-align: center;
   grid-column: span 3;
 }
-.footer-search form{
+
+.footer-search form {
   display: flex;
   flex-direction: column;
   row-gap: 0.4rem;
 }
-.event-section{
+
+.event-section {
   font-size: 16px;
+  text-align: center;
+}
+
+.h2 {
+  font-size: clamp(1rem, 10dvw, 4rem);
+  padding: 2dvh;
   text-align: center;
 }
